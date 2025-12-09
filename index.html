@@ -12,24 +12,28 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #eef2f5; /* Background bawaan */
+            background-color: #eef2f5; 
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        /* --- Container Utama --- */
+        /* --- Container Utama (KOTAK PUTIH) --- */
         .widget-container {
             width: 100%;
             max-width: 100%;
             position: relative;
-            overflow: hidden;
-            /* Frame & Shadow dihilangkan supaya transparan/nyatu */
-            background-color: transparent; 
-            box-shadow: none;
-            /* PERUBAHAN: Menambahkan sudut melengkung */
-            border-radius: 20px;
+            overflow: hidden; /* Supaya sudut melengkung memotong konten */
+            
+            /* PERUBAHAN 1: Memberikan warna background PUTIH supaya bentuk rounded terlihat */
+            background-color: #ffffff; 
+            
+            /* PERUBAHAN 2: Sudut melengkung 20px */
+            border-radius: 20px; 
+            
+            /* Opsional: Tambah shadow sedikit biar makin elegan */
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
         }
 
         /* --- Track Slider --- */
@@ -42,41 +46,39 @@
         /* --- Kartu Slide Individual --- */
         .slide {
             width: 100%;
-            /* Background diubah transparent agar ikut background body */
             background-color: transparent; 
-            /* PERUBAHAN: Padding atas/bawah diperkecil dari 5px jadi 2px */
-            padding: 2px 8px; 
+            padding: 0 12px; /* Kiri kanan sedikit dilonggarkan */
             display: flex;
             align-items: center;
-            /* Space-between diganti supaya teks & gambar nempel */
             justify-content: flex-start; 
-            gap: 5px; /* Jarak antara teks dan gambar sangat dekat */
+            gap: 5px; 
             position: relative;
-            /* PERUBAHAN: Tinggi diperpendek sedikit dari 115px jadi 110px */
-            height: 107px; 
+            
+            /* PERUBAHAN 3: Tinggi DIPENDEKKAN jadi 85px (tadinya 100px+) */
+            height: 85px; 
         }
 
         /* --- Area Teks (Kiri) --- */
         .text-content {
-            flex: 1; /* Mengisi sisa ruang */
+            flex: 1; 
             z-index: 2;
             padding-left: 5px;
         }
 
         .slide-title {
             font-family: 'Merriweather', serif;
-            font-size: 14px; /* Ukuran TETAP */
+            font-size: 14px; 
             font-weight: 900;
             font-style: italic;
             color: #1a202c;
             line-height: 1.2;
-            margin-bottom: 4px; /* Jarak judul ke deskripsi dirapetin */
+            margin-bottom: 2px; /* Jarak judul ke deskripsi dirapetin */
         }
 
         .slide-desc {
-            font-size: 10px; /* Ukuran TETAP */
+            font-size: 10px; 
             color: #64748b;
-            margin-bottom: 10px; /* Jarak ke tombol dirapetin */
+            margin-bottom: 6px; /* Jarak ke tombol dirapetin */
             font-weight: 500;
             line-height: 1.2;
         }
@@ -86,10 +88,10 @@
             display: inline-block;
             text-decoration: none;
             color: white;
-            font-size: 10px; /* Ukuran TETAP */
+            font-size: 10px; 
             font-weight: 600;
-            padding: 6px 14px; /* Padding tombol diperkecil */
-            border-radius: 50px;
+            padding: 6px 14px; 
+            border-radius: 30px;
             background: linear-gradient(90deg, #141e30 0%, #243b55 100%);
             box-shadow: 0 4px 10px rgba(36, 59, 85, 0.3);
             transition: transform 0.2s ease;
@@ -102,9 +104,8 @@
         /* --- Area Gambar (Kanan) --- */
         .image-content {
             flex-shrink: 0;
-            /* Ukuran TETAP 135px */
             width: 135px; 
-            height: 100%; /* Full height container */
+            height: 100%; 
             position: relative;
             display: flex;
             align-items: center;
@@ -112,21 +113,19 @@
         }
 
         .image-content img {
-            width: 110%; /* Scale TETAP */
-            height: 110%;
+            /* Gambar dibesarkan sedikit supaya tetap pop-out walau kotak pendek */
+            width: 125%; 
+            height: 125%;
             object-fit: contain;
             filter: drop-shadow(0 8px 10px rgba(0,0,0,0.1));
-            /* Geser sedikit posisi gambar jika perlu */
-            transform: translateX(5px); 
+            transform: translateX(5px) translateY(5px); 
         }
 
         /* --- Indikator Slider (Dots) --- */
         .dots-container {
             position: absolute;
-            bottom: 8px; /* Lebih mepet bawah */
-            left: 20px; /* Pindah ke kiri supaya estetik (opsional) atau tetap tengah */
-            /* Jika mau tetap tengah, pakai yang bawah ini: */
-            /* left: 50%; transform: translateX(-50%); */
+            bottom: 6px; /* Lebih mepet bawah karena kotak makin pendek */
+            left: 20px; 
             display: flex;
             gap: 4px;
         }
@@ -155,7 +154,7 @@
                 <div class="text-content">
                     <h2 class="slide-title">Master Remote Work</h2>
                     <p class="slide-desc">Panduan Realistis Jadi Remote Worker.</p>
-                    <a href="#" class="cta-button">Checkout!</a>
+                    <a href="https://lynk.id/ajengwahys/3vndxok5q8gz" class="cta-button" target="_blank">Checkout!</a>
                 </div>
                 <div class="image-content">
                     <img src="https://cdn.lynkid.my.id/draft-products/08-12-2025/1765200585530_1788697.png" alt="Remote Work">
@@ -166,7 +165,7 @@
                 <div class="text-content">
                     <h2 class="slide-title">Kerja Dari Mana Aja?</h2>
                     <p class="slide-desc">Bebas macet, waktu lebih fleksibel.</p>
-                    <a href="#" class="cta-button">Mulai Aja</a>
+                    <a href="https://lynk.id/ajengwahys/3vndxok5q8gz" class="cta-button" target="_blank">Mulai Aja</a>
                 </div>
                 <div class="image-content">
                     <img src="https://cdn.lynkid.my.id/draft-products/08-12-2025/1765200585530_1788697.png" alt="Freelance">
@@ -177,7 +176,7 @@
                 <div class="text-content">
                     <h2 class="slide-title">Langkah Awal Remote</h2>
                     <p class="slide-desc">Cara sehat dan realistis.</p>
-                    <a href="#" class="cta-button">Pelajari</a>
+                    <a href="https://lynk.id/ajengwahys/3vndxok5q8gz" class="cta-button" target="_blank">Pelajari</a>
                 </div>
                 <div class="image-content">
                     <img src="https://cdn.lynkid.my.id/draft-products/08-12-2025/1765201109470_8829678.png" alt="Digital Nomad">
@@ -262,4 +261,3 @@
     </script>
 </body>
 </html>
-
