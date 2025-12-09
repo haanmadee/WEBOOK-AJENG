@@ -27,7 +27,9 @@
             overflow: hidden;
             /* Frame & Shadow dihilangkan supaya transparan/nyatu */
             background-color: transparent; 
-            box-shadow: none; 
+            box-shadow: none;
+            /* PERUBAHAN: Menambahkan sudut melengkung */
+            border-radius: 15px;
         }
 
         /* --- Track Slider --- */
@@ -42,14 +44,16 @@
             width: 100%;
             /* Background diubah transparent agar ikut background body */
             background-color: transparent; 
-            padding: 5px 10px; /* Padding diperkecil biar rapet */
+            /* PERUBAHAN: Padding atas/bawah diperkecil dari 5px jadi 2px */
+            padding: 2px 10px; 
             display: flex;
             align-items: center;
             /* Space-between diganti supaya teks & gambar nempel */
             justify-content: flex-start; 
             gap: 5px; /* Jarak antara teks dan gambar sangat dekat */
             position: relative;
-            height: 115px; /* Ukuran diperpendek jadi lebih tipis */
+            /* PERUBAHAN: Tinggi diperpendek sedikit dari 115px jadi 110px */
+            height: 110px; 
         }
 
         /* --- Area Teks (Kiri) --- */
@@ -61,7 +65,7 @@
 
         .slide-title {
             font-family: 'Merriweather', serif;
-            font-size: 14px; /* Diperkecil dari 18px */
+            font-size: 14px; /* Ukuran TETAP */
             font-weight: 900;
             font-style: italic;
             color: #1a202c;
@@ -70,7 +74,7 @@
         }
 
         .slide-desc {
-            font-size: 10px;
+            font-size: 10px; /* Ukuran TETAP */
             color: #64748b;
             margin-bottom: 10px; /* Jarak ke tombol dirapetin */
             font-weight: 500;
@@ -82,7 +86,7 @@
             display: inline-block;
             text-decoration: none;
             color: white;
-            font-size: 10px; /* Ukuran font tombol disesuaikan */
+            font-size: 10px; /* Ukuran TETAP */
             font-weight: 600;
             padding: 6px 14px; /* Padding tombol diperkecil */
             border-radius: 50px;
@@ -98,7 +102,7 @@
         /* --- Area Gambar (Kanan) --- */
         .image-content {
             flex-shrink: 0;
-            /* Diperbesar dari 110px ke 135px */
+            /* Ukuran TETAP 135px */
             width: 135px; 
             height: 100%; /* Full height container */
             position: relative;
@@ -108,7 +112,7 @@
         }
 
         .image-content img {
-            width: 110%; /* Scale up gambar supaya terlihat besar */
+            width: 110%; /* Scale TETAP */
             height: 110%;
             object-fit: contain;
             filter: drop-shadow(0 8px 10px rgba(0,0,0,0.1));
