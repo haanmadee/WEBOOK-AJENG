@@ -12,28 +12,26 @@
         
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #eef2f5; 
+            background-color: #eef2f5; /* Background untuk preview saja */
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
         }
 
-        /* --- Container Utama (KOTAK PUTIH) --- */
+        /* --- Container Utama --- */
         .widget-container {
             width: 100%;
             max-width: 100%;
             position: relative;
-            overflow: hidden; /* Supaya sudut melengkung memotong konten */
+            /* PERUBAHAN 1: Background dibuat transparan lagi agar tidak ada "kotak abu-abu" */
+            background-color: transparent;
+            box-shadow: none;
             
-            /* PERUBAHAN 1: Memberikan warna background PUTIH supaya bentuk rounded terlihat */
-            background-color: #ffffff; 
-            
-            /* PERUBAHAN 2: Sudut melengkung 20px */
-            border-radius: 20px; 
-            
-            /* Opsional: Tambah shadow sedikit biar makin elegan */
-            box-shadow: 0 4px 20px rgba(0,0,0,0.05); 
+            /* Sudut melengkung tetap dipertahankan */
+            border-radius: 20px;
+            /* Penting: overflow hidden supaya konten yang lewat sudut melengkung terpotong */
+            overflow: hidden; 
         }
 
         /* --- Track Slider --- */
@@ -47,15 +45,13 @@
         .slide {
             width: 100%;
             background-color: transparent; 
-            padding: 0 12px; /* Kiri kanan sedikit dilonggarkan */
+            padding: 0 12px; 
             display: flex;
             align-items: center;
             justify-content: flex-start; 
             gap: 5px; 
             position: relative;
-            
-            /* PERUBAHAN 3: Tinggi DIPENDEKKAN jadi 85px (tadinya 100px+) */
-            height: 85px; 
+            height: 85px; /* Tinggi tetap pendek */
         }
 
         /* --- Area Teks (Kiri) --- */
@@ -72,13 +68,13 @@
             font-style: italic;
             color: #1a202c;
             line-height: 1.2;
-            margin-bottom: 2px; /* Jarak judul ke deskripsi dirapetin */
+            margin-bottom: 2px; 
         }
 
         .slide-desc {
             font-size: 10px; 
             color: #64748b;
-            margin-bottom: 6px; /* Jarak ke tombol dirapetin */
+            margin-bottom: 6px; 
             font-weight: 500;
             line-height: 1.2;
         }
@@ -113,7 +109,6 @@
         }
 
         .image-content img {
-            /* Gambar dibesarkan sedikit supaya tetap pop-out walau kotak pendek */
             width: 125%; 
             height: 125%;
             object-fit: contain;
@@ -124,10 +119,15 @@
         /* --- Indikator Slider (Dots) --- */
         .dots-container {
             position: absolute;
-            bottom: 6px; /* Lebih mepet bawah karena kotak makin pendek */
-            left: 20px; 
+            bottom: 8px; /* Jarak dari bawah */
+            
+            /* PERUBAHAN 2: Memindahkan dots ke tengah */
+            left: 50%; 
+            transform: translateX(-50%); 
+            
             display: flex;
             gap: 4px;
+            z-index: 10;
         }
 
         .dot {
